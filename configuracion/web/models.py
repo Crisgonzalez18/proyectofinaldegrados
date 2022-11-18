@@ -123,11 +123,10 @@ class DjangoSession(models.Model):
 
 
 class Medicos(models.Model):
-    id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
-    nombre = models.CharField(max_length=50)
-    apellidos = models.CharField(max_length=150)
-    nidetificacion = models.CharField(max_length=20)
-    tarjeta = models.CharField(max_length=20)
+    nombres = models.CharField(max_length=50)
+    apellidos = models.CharField(max_length=50)
+    cedula = models.CharField(max_length=12)
+    tarjeta = models.CharField(db_column='Tarjeta', max_length=20)  # Field name made lowercase.
     especialidad = models.IntegerField()
     jornada = models.IntegerField()
     contacto = models.CharField(max_length=15)
@@ -136,3 +135,17 @@ class Medicos(models.Model):
     class Meta:
         managed = False
         db_table = 'medicos'
+
+
+class Pacientes(models.Model):
+    nombres = models.CharField(max_length=50)
+    apellidos = models.CharField(max_length=50)
+    cedula = models.CharField(max_length=20)
+    tipo = models.IntegerField()
+    regimen = models.IntegerField()
+    contacto = models.CharField(max_length=20)
+    grupo = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'pacientes'
