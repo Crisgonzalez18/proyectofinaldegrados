@@ -4,7 +4,7 @@ from web.formularios.formularioMedico import FormularioMedico
 from web.formularios.formulariopaciente import FormularioPaciente
 
 from web.models import Medicos
-from web.models import Pacientes
+#from web.models import Pacientes
 
 # Create your views here.
 # renderizar es PINTAR
@@ -12,12 +12,15 @@ def Home(request):
     return render(request,'index.html')
 
 def Medicosvista(request):
+    #Creamos una variable para controlar la ejecucion del modal/alerta
+    lanzandoAlerta = False
 
     #Debo utilizar la clase formularioMedico
     #CREAMOS ASI UN OBJETO
     formulario=FormularioMedico()
     diccionario={
-        "formulario":formulario
+        "formulario":formulario,
+        "bandera": lanzandoAlerta
     }
 
     #ACTIVAR LA RECEPCION DE DATOS
@@ -29,23 +32,23 @@ def Medicosvista(request):
             datos=datosRecibidos.cleaned_data
             #llevar mis datos hacia la base datos BD
             medicoNuevo = Medicos( 
-                nombre=datos["nombre"],
-                apellidos= ["apellidos"],
-                identificacion=["identificacion"],
-                tarjeta = ["tarjetaProfesional"],
-                especialidad = ["especialidad"],
-                jornada = ["jornada"],
-                contacto = ["contacto"],
-                sede = ["sede"]
+                nombres=datos["nombre"],
+                apellidos= datos["apellidos"],
+                cedula=datos["cedula"],
+                tarjeta = datos["tarjetaProfesional"],
+                especialidad =datos ["especialidad"],
+                jornada = datos["jornada"],
+                contacto = datos["contacto"],
+                sede =datos ["sede"]
                 
             )
             medicoNuevo.save()
-            print("Exito en la operacion")
+            diccionario["bandera"]=True
 
 
     return render(request,'registromedicos.html',diccionario)
 
-def Pacientesvista(request):
+'''def Pacientesvista(request):
 
 
     formulario=FormularioPaciente()
@@ -75,4 +78,4 @@ def Pacientesvista(request):
             print("Exito en la operacion")
 
 
-    return render(request,'registroPacientes.html',diccionario)
+    return render(request,'registroPacientes.html',diccionario)'''

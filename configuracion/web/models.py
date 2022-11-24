@@ -123,29 +123,15 @@ class DjangoSession(models.Model):
 
 
 class Medicos(models.Model):
-    nombres = models.CharField(max_length=50)
-    apellidos = models.CharField(max_length=50)
-    cedula = models.CharField(max_length=12)
-    tarjeta = models.CharField(db_column='Tarjeta', max_length=20)  # Field name made lowercase.
+    nombres = models.CharField(max_length=100)
+    apellidos = models.CharField(max_length=100)
+    cedula = models.CharField(max_length=100)
+    tarjeta = models.CharField(max_length=100)
     especialidad = models.IntegerField()
     jornada = models.IntegerField()
-    contacto = models.CharField(max_length=15)
+    contacto = models.CharField(max_length=100)
     sede = models.IntegerField()
 
     class Meta:
         managed = False
         db_table = 'medicos'
-
-
-class Pacientes(models.Model):
-    nombres = models.CharField(max_length=50)
-    apellidos = models.CharField(max_length=50)
-    cedula = models.CharField(max_length=20)
-    tipo = models.IntegerField()
-    regimen = models.IntegerField()
-    contacto = models.CharField(max_length=20)
-    grupo = models.IntegerField()
-
-    class Meta:
-        managed = False
-        db_table = 'pacientes'
