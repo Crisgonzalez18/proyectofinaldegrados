@@ -16,15 +16,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+<<<<<<< HEAD
 from web.views import Home,Medicosvista,consultorioMedico,consultoriopaciente,Pacientesvista
 
+=======
+from web.views import Home,Medicosvista
+from web.views import Home
+#Pacientesvista
+>>>>>>> f3d4c5a08fe6430e1d3d8c70fa0ffe976cff8bae
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', Home, name="home"),
     path('medicos/', Medicosvista, name="medicos"),
+<<<<<<< HEAD
     path('pacientes/', Pacientesvista, name="pacientes"),
     path('consultoriomedico/', consultorioMedico, name="consultoriomedico"),
     path('consultoriopaciente/', consultoriopaciente, name="consultoriopaciente")
+=======
+    #path('pacientes/', Pacientesvista, name="pacientes")
+>>>>>>> f3d4c5a08fe6430e1d3d8c70fa0ffe976cff8bae
 ]

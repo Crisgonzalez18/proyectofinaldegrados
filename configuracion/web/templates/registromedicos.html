@@ -18,6 +18,16 @@
     </header>
 
     <br><br><br>
+    <section>
+        {% if bandera %}
+            <script>
+                Swal.fire(
+                'Exito',
+                'Médico Registrado',
+                'success'
+                )
+            </script>
+        {% endif %}
 
     <section>
         {% if bandera %}

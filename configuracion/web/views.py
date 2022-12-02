@@ -4,7 +4,7 @@ from web.formularios.formularioMedico import FormularioMedico
 from web.formularios.formulariopaciente import FormularioPaciente
 
 from web.models import Medicos
-from web.models import Pacientes
+#from web.models import Pacientes
 
 # Create your views here.
 # renderizar es PINTAR
@@ -28,6 +28,8 @@ def consultoriopaciente(request):
     return render(request,'consultoriopaciente.html',datospacientes)
 
 def Medicosvista(request):
+    #Creamos una variable para controlar la ejecucion del modal/alerta
+    lanzandoAlerta = False
 
     #creamos una variable para controlar la ejecucion de la alerta de submit del medicos
     lanzandoalerta=False
@@ -65,7 +67,7 @@ def Medicosvista(request):
 
     return render(request,'registromedicos.html',diccionario)
 
-def Pacientesvista(request):
+'''def Pacientesvista(request):
 
 
     formulario=FormularioPaciente()
@@ -95,4 +97,4 @@ def Pacientesvista(request):
             print("Exito en la operacion")
 
 
-    return render(request,'registroPacientes.html',diccionario)
+    return render(request,'registroPacientes.html',diccionario)'''

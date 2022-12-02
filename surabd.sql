@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
+<<<<<<< HEAD
 -- Tiempo de generación: 24-11-2022 a las 22:27:39
+=======
+-- Tiempo de generación: 24-11-2022 a las 22:27:38
+>>>>>>> f3d4c5a08fe6430e1d3d8c70fa0ffe976cff8bae
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.0.19
 
@@ -190,6 +194,7 @@ CREATE TABLE `django_migrations` (
 --
 
 INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
+<<<<<<< HEAD
 (1, 'contenttypes', '0001_initial', '2022-11-24 20:44:19.955535'),
 (2, 'auth', '0001_initial', '2022-11-24 20:44:20.352448'),
 (3, 'admin', '0001_initial', '2022-11-24 20:44:20.463152'),
@@ -208,6 +213,26 @@ INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
 (16, 'auth', '0011_update_proxy_permissions', '2022-11-24 20:44:20.673589'),
 (17, 'auth', '0012_alter_user_first_name_max_length', '2022-11-24 20:44:20.686554'),
 (18, 'sessions', '0001_initial', '2022-11-24 20:44:20.712484');
+=======
+(1, 'contenttypes', '0001_initial', '2022-11-24 20:44:20.674384'),
+(2, 'auth', '0001_initial', '2022-11-24 20:44:21.134327'),
+(3, 'admin', '0001_initial', '2022-11-24 20:44:21.228053'),
+(4, 'admin', '0002_logentry_remove_auto_add', '2022-11-24 20:44:21.243699'),
+(5, 'admin', '0003_logentry_add_action_flag_choices', '2022-11-24 20:44:21.243699'),
+(6, 'contenttypes', '0002_remove_content_type_name', '2022-11-24 20:44:21.306158'),
+(7, 'auth', '0002_alter_permission_name_max_length', '2022-11-24 20:44:21.353046'),
+(8, 'auth', '0003_alter_user_email_max_length', '2022-11-24 20:44:21.368670'),
+(9, 'auth', '0004_alter_user_username_opts', '2022-11-24 20:44:21.368670'),
+(10, 'auth', '0005_alter_user_last_login_null', '2022-11-24 20:44:21.415505'),
+(11, 'auth', '0006_require_contenttypes_0002', '2022-11-24 20:44:21.415505'),
+(12, 'auth', '0007_alter_validators_add_error_messages', '2022-11-24 20:44:21.431126'),
+(13, 'auth', '0008_alter_user_username_max_length', '2022-11-24 20:44:21.431126'),
+(14, 'auth', '0009_alter_user_last_name_max_length', '2022-11-24 20:44:21.446747'),
+(15, 'auth', '0010_alter_group_name_max_length', '2022-11-24 20:44:21.478022'),
+(16, 'auth', '0011_update_proxy_permissions', '2022-11-24 20:44:21.478022'),
+(17, 'auth', '0012_alter_user_first_name_max_length', '2022-11-24 20:44:21.493611'),
+(18, 'sessions', '0001_initial', '2022-11-24 20:44:21.524853');
+>>>>>>> f3d4c5a08fe6430e1d3d8c70fa0ffe976cff8bae
 
 -- --------------------------------------------------------
 
@@ -244,6 +269,7 @@ CREATE TABLE `medicos` (
 --
 
 INSERT INTO `medicos` (`id`, `nombres`, `apellidos`, `cedula`, `tarjeta`, `especialidad`, `jornada`, `contacto`, `sede`) VALUES
+<<<<<<< HEAD
 (1, 'sdasda', 'sdasda', '545', 'sdasdasda', 1, 1, '54545', 1),
 (2, 'Juan', 'Rios', '21654667', 'md157875', 1, 1, '6498431121', 1),
 (3, 'Juan', 'Rios', '21654667', 'md157875', 1, 1, '6498431121', 1),
@@ -253,6 +279,12 @@ INSERT INTO `medicos` (`id`, `nombres`, `apellidos`, `cedula`, `tarjeta`, `espec
 (7, 'Leonel', 'Messiento', '0', 'Singoles01', 1, 1, '1321674', 2),
 (8, 'elco', 'mandante', '5', 'golesen5mundiales202', 1, 1, '987874645', 2),
 (9, 'elco', 'mandate bichoto', '5', '5golesenmundiales', 1, 1, '5', 2);
+=======
+(1, 'hjjh', 'hjhj', '546456', 'jkjkkj', 1, 1, '456456456645', 1),
+(2, 'hjjh', 'hjhj', '546456', 'jkjkkj', 1, 1, '456456456645', 1),
+(3, 'Dani', 'Martinez', '1001772', '123456', 1, 1, '30523563', 1),
+(4, 'Jose', 'Cardona', '203653', '123658', 1, 1, '2356983', 1);
+>>>>>>> f3d4c5a08fe6430e1d3d8c70fa0ffe976cff8bae
 
 --
 -- Índices para tablas volcadas
@@ -399,7 +431,11 @@ ALTER TABLE `django_migrations`
 -- AUTO_INCREMENT de la tabla `medicos`
 --
 ALTER TABLE `medicos`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+>>>>>>> f3d4c5a08fe6430e1d3d8c70fa0ffe976cff8bae
 
 --
 -- Restricciones para tablas volcadas
