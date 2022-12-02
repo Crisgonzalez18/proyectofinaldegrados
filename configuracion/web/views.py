@@ -11,13 +11,33 @@ from web.models import Pacientes
 def Home(request):
     return render(request,'index.html')
 
+def consultorioMedico(request):
+    medicosConsultados = Medicos.objects.all()
+
+    datosmedicos={
+        "medicos":medicosConsultados
+    }
+    return render(request,'consultoriomedico.html',datosmedicos)
+
+def consultoriopaciente(request):
+    pacientesConsultados = Pacientes.objects.all()
+    
+    datospacientes={
+        "pacientes":pacientesConsultados
+    }
+    return render(request,'consultoriopaciente.html',datospacientes)
+
 def Medicosvista(request):
+
+    #creamos una variable para controlar la ejecucion de la alerta de submit del medicos
+    lanzandoalerta=False
 
     #Debo utilizar la clase formularioMedico
     #CREAMOS ASI UN OBJETO
     formulario=FormularioMedico()
     diccionario={
-        "formulario":formulario
+        "formulario":formulario,
+        "bandera":lanzandoalerta
     }
 
     #ACTIVAR LA RECEPCION DE DATOS
@@ -29,18 +49,18 @@ def Medicosvista(request):
             datos=datosRecibidos.cleaned_data
             #llevar mis datos hacia la base datos BD
             medicoNuevo = Medicos( 
-                nombre=datos["nombre"],
-                apellidos= ["apellidos"],
-                identificacion=["identificacion"],
-                tarjeta = ["tarjetaProfesional"],
-                especialidad = ["especialidad"],
-                jornada = ["jornada"],
-                contacto = ["contacto"],
-                sede = ["sede"]
-                
+                nombres=datos["nombre"],
+                apellidos= datos["apellidos"],
+                cedula=datos["cedula"],
+                tarjeta = datos["tarjetaProfesional"],
+                especialidad =datos["especialidad"],
+                jornada = datos["jornada"],
+                contacto = datos["contacto"],
+                sede = datos["sede"]
             )
             medicoNuevo.save()
-            print("Exito en la operacion")
+            #print("Exito en la operacion")
+            diccionario["bandera"]=True
 
 
     return render(request,'registromedicos.html',diccionario)
